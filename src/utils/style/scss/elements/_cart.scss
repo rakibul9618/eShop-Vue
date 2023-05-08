@@ -1,0 +1,95 @@
+@use '../config/variables' as C;
+@use '../mixins/breakpoint' as *;
+
+.category_cart {
+  display: block;
+  background-color: C.$light_gray;
+  border-radius: 12px;
+  padding: 15px 20px;
+  transition: transform 0.5s;
+  img {
+    transition: transform 0.4s;
+  }
+  &:hover {
+    img {
+      transform: scale(1.1);
+    }
+  }
+}
+
+.product_cart {
+  .image_holder {
+    background-color: C.$light_gray;
+    transition: all 0.4s;
+    img {
+      transition: all 0.4s;
+    }
+    .product_action {
+      left: 0;
+      right: 0;
+      bottom: -200px;
+      transition: all 0.5s;
+      .items {
+        padding: 8px 10px;
+        background-color: C.$white;
+        border-radius: 5px;
+        transition: all 0.4s;
+        &:hover {
+          color: C.$pink;
+        }
+      }
+    }
+  }
+
+  &:hover {
+    .image_holder {
+      box-shadow: 0px 1px 28px 7px #f3f1f8;
+      img {
+        transform: scale(1.08);
+      }
+    }
+    .product_action {
+      bottom: 20px;
+    }
+  }
+}
+
+.flash_cart {
+  padding: 40px 15px;
+  background-color: C.$light_gray;
+  .countdown_section {
+    height: 55px;
+    width: 55px;
+    background-color: C.$white;
+    .countdown_number {
+      font-size: 18px;
+    }
+    .countdown_unit {
+      font-size: 14px;
+      color: C.$gray_text;
+    }
+  }
+  .check_out {
+    padding: 16px 38px;
+    border-radius: 6px;
+  }
+
+  // media query
+
+  @include breakpoint(sm) {
+    padding: 65px 80px;
+    .countdown_section {
+      height: 80px;
+      width: 80px;
+      .countdown_number {
+        font-size: 24px;
+      }
+    }
+  }
+
+  @include breakpoint(xl) {
+    .poster_countdown_thumbnail {
+      margin-top: -100px;
+    }
+  }
+}

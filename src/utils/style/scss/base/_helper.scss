@@ -1,0 +1,610 @@
+@use '../mixins/breakpoint' as *;
+@use '../config/variables' as C;
+
+//
+// Width //
+//
+@for $i from 0 through 10 {
+  .w-#{$i * 10} {
+    width: #{$i * 10%} !important;
+  }
+}
+
+@include breakpoint(sm) {
+  .w-sm-auto {
+    width: auto !important;
+  }
+  @for $i from 0 through 10 {
+    .w-sm-#{$i * 10} {
+      width: #{$i * 10%} !important;
+    }
+  }
+}
+
+@include breakpoint(md) {
+  @for $i from 0 through 10 {
+    .w-md-#{$i * 10} {
+      width: #{$i * 10%} !important;
+    }
+  }
+}
+
+@include breakpoint(lg) {
+  @for $i from 0 through 10 {
+    .w-lg-#{$i * 10} {
+      width: #{$i * 10%} !important;
+    }
+  }
+}
+
+@include breakpoint(xl) {
+  @for $i from 0 through 10 {
+    .w-xl-#{$i * 10} {
+      width: #{$i * 10%} !important;
+    }
+  }
+}
+
+@include breakpoint(2xl) {
+  @for $i from 0 through 10 {
+    .w-2xl-#{$i * 10} {
+      width: #{$i * 10%} !important;
+    }
+  }
+}
+
+.w-auto {
+  width: auto !important;
+}
+
+@include breakpoint(sm) {
+  .w-sm-auto {
+    width: auto !important;
+  }
+}
+
+@include breakpoint(md) {
+  .w-md-auto {
+    width: auto !important;
+  }
+}
+
+@include breakpoint(lg) {
+  .w-lg-auto {
+    width: auto !important;
+  }
+}
+
+@include breakpoint(xl) {
+  .w-xl-auto {
+    width: auto !important;
+  }
+}
+
+//
+// height //
+//
+.h-100 {
+  height: 100% !important;
+}
+
+//
+// block //
+//
+.block {
+  display: block !important;
+}
+.none {
+  display: none !important;
+}
+.inline_block {
+  display: inline-block !important;
+}
+
+@include breakpoint(sm) {
+  .none-sm {
+    display: none !important;
+  }
+  .block-sm {
+    display: block !important;
+  }
+}
+
+@include breakpoint(xl) {
+  .none-xl {
+    display: none !important;
+  }
+  .block-xl {
+    display: block !important;
+  }
+}
+
+//
+// Grid
+//
+.grid {
+  display: grid !important;
+}
+.justify_items-center {
+  justify-items: center !important;
+}
+.justify_items-start {
+  justify-items: start !important;
+}
+.justify_items-end {
+  justify-items: end !important;
+}
+.justify_self-center {
+  justify-self: center !important;
+}
+.justify_self-start {
+  justify-self: start !important;
+}
+.justify_self-end {
+  justify-self: end !important;
+}
+.align_items-end {
+  align-items: end !important;
+}
+.align_items-start {
+  align-items: start !important;
+}
+.align_items-center {
+  align-items: center !important;
+}
+.place-center {
+  place-items: center !important;
+}
+.align_self-center {
+  align-self: center !important;
+}
+
+.col-span-2 {
+  grid-column-start: span 2;
+}
+@include breakpoint(md) {
+  .col-md-span-2 {
+    grid-column-start: span 2;
+  }
+}
+
+@for $i from 0 through 7 {
+  .col-#{$i} {
+    grid-template-columns: repeat(#{$i}, minmax(0, 1fr)) !important;
+  }
+  .col-#{$i * 10} {
+    grid-template-columns: #{$i * 10%} auto !important;
+  }
+}
+
+@include breakpoint(xs) {
+  @for $i from 0 through 7 {
+    .col-xs-#{$i} {
+      grid-template-columns: repeat(#{$i}, minmax(0, 1fr)) !important;
+    }
+  }
+}
+
+@include breakpoint(sm) {
+  @for $i from 0 through 7 {
+    .col-sm-#{$i} {
+      grid-template-columns: repeat(#{$i}, minmax(0, 1fr)) !important;
+    }
+  }
+}
+
+@include breakpoint(md) {
+  @for $i from 0 through 7 {
+    .col-md-#{$i} {
+      grid-template-columns: repeat(#{$i}, minmax(0, 1fr)) !important;
+    }
+  }
+}
+
+@include breakpoint(lg) {
+  @for $i from 0 through 7 {
+    .col-lg-#{$i} {
+      grid-template-columns: repeat(#{$i}, minmax(0, 1fr)) !important;
+    }
+    .col-lg-#{$i * 10} {
+      grid-template-columns: #{$i * 10%} auto !important;
+    }
+  }
+}
+
+@include breakpoint(xl) {
+  @for $i from 0 through 7 {
+    .col-xl-#{$i} {
+      grid-template-columns: repeat(#{$i}, minmax(0, 1fr)) !important;
+    }
+    .col-xl-#{$i * 10} {
+      grid-template-columns: #{$i * 10%} auto !important;
+    }
+  }
+}
+
+//
+// Flex //
+//
+.flex {
+  display: flex !important;
+}
+.flex-1 {
+  flex: 1 1 0% !important;
+}
+.flex-col {
+  flex-direction: column !important;
+}
+.flex-row {
+  flex-direction: row !important;
+}
+.flex-wrap {
+  flex-wrap: wrap !important;
+}
+.flex-nowrap {
+  flex-wrap: nowrap !important;
+}
+
+.flex-start {
+  justify-content: start !important;
+}
+.flex-end {
+  justify-content: end !important;
+}
+.flex-center {
+  justify-content: center !important;
+}
+.flex-between {
+  justify-content: space-between !important;
+}
+.items-center {
+  align-items: center !important;
+}
+.items-start {
+  align-items: flex-start !important;
+}
+
+.flex-middle {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+@include breakpoint(sm) {
+  .flex-sm-wrap {
+    flex-wrap: wrap !important;
+  }
+  .flex-sm-nowrap {
+    flex-wrap: nowrap !important;
+  }
+  .flex-sm-col {
+    flex-direction: column !important;
+  }
+  .flex-sm-row {
+    flex-direction: row !important;
+  }
+}
+
+@include breakpoint(md) {
+  .flex-md-wrap {
+    flex-wrap: wrap !important;
+  }
+  .flex-md-nowrap {
+    flex-wrap: nowrap !important;
+  }
+  .flex-md-between {
+    justify-content: space-between !important;
+  }
+  .flex-md-col {
+    flex-direction: column !important;
+  }
+  .flex-md-row {
+    flex-direction: row !important;
+  }
+}
+
+@include breakpoint(lg) {
+  .flex-lg-wrap {
+    flex-wrap: wrap !important;
+  }
+  .flex-lg-nowrap {
+    flex-wrap: nowrap !important;
+  }
+  .items-lg-center {
+    align-items: center !important;
+  }
+  .items-lg-start {
+    align-items: flex-start !important;
+  }
+}
+
+@include breakpoint(xl) {
+  .flex-xl-wrap {
+    flex-wrap: wrap !important;
+  }
+  .flex-xl-nowrap {
+    flex-wrap: nowrap !important;
+  }
+}
+
+//
+// Spacing - gap //
+//
+
+@for $i from 0 through 20 {
+  .gap-#{$i * 5} {
+    gap: #{$i * 5}px !important;
+  }
+}
+
+@for $i from 0 through 20 {
+  .gap_col-#{$i * 5} {
+    column-gap: #{$i * 5}px !important;
+  }
+}
+
+@for $i from 0 through 20 {
+  .gap_row-#{$i * 5} {
+    row-gap: #{$i * 5}px !important;
+  }
+}
+
+@include breakpoint(sm) {
+  @for $i from 0 through 20 {
+    .gap-sm-#{$i * 5} {
+      gap: #{$i * 5}px !important;
+    }
+  }
+}
+
+@include breakpoint(lg) {
+  @for $i from 0 through 20 {
+    .gap-md-#{$i * 5} {
+      gap: #{$i * 5}px !important;
+    }
+  }
+}
+
+@include breakpoint(xl) {
+  @for $i from 0 through 20 {
+    .gap-xl-#{$i * 5} {
+      gap: #{$i * 5}px !important;
+    }
+  }
+}
+
+//
+//  Text
+//
+.uppercase {
+  text-transform: uppercase !important;
+}
+.capitalize {
+  text-transform: capitalize !important;
+}
+
+.text-400 {
+  font-weight: 400 !important;
+}
+.text-500 {
+  font-weight: 500 !important;
+}
+.text-700 {
+  font-weight: 700 !important;
+}
+
+.text-center {
+  text-align: center !important;
+}
+.text-start {
+  text-align: start !important;
+}
+
+@include breakpoint(md) {
+  .text-md-center {
+    text-align: center !important;
+  }
+  .text-md-start {
+    text-align: start !important;
+  }
+}
+@include breakpoint(lg) {
+  .text-lg-center {
+    text-align: center !important;
+  }
+  .text-lg-start {
+    text-align: start !important;
+  }
+}
+@include breakpoint(xl) {
+  .text-xl-center {
+    text-align: center !important;
+  }
+  .text-xl-start {
+    text-align: start !important;
+  }
+}
+
+// text colors
+
+.text-primary {
+  color: C.$primary !important;
+}
+.text-secondary {
+  color: C.$secondary !important;
+}
+.text-gray {
+  color: C.$gray_text !important;
+}
+.text-white {
+  color: C.$white !important;
+}
+
+.text-pink {
+  color: C.$pink !important;
+}
+
+.text-error {
+  color: C.$warning !important;
+}
+
+// background
+
+.bg-white {
+  background-color: C.$white !important;
+}
+
+.bg-primary {
+  background-color: C.$primary !important;
+}
+.bg-light_gray {
+  background-color: C.$light_gray !important;
+}
+
+//
+//  border-radius
+//
+
+@for $i from 1 through 5 {
+  .radius-#{ $i } {
+    border-radius: #{$i / 4}rem !important;
+  }
+}
+.radius-rounded {
+  border-radius: 50% !important;
+}
+
+.rounded {
+  border-radius: 50% !important;
+}
+
+//
+//  borders
+//
+
+.bb-light_gray {
+  border-bottom: 1px solid #f1f1f1;
+}
+
+//
+//  position
+//
+.relative {
+  position: relative !important;
+}
+.absolute {
+  position: absolute !important;
+}
+.fixed {
+  position: fixed !important;
+}
+.sticky {
+  position: sticky !important;
+}
+
+.top-0 {
+  top: 0;
+}
+.top-30 {
+  top: 30px;
+}
+
+.inset-0 {
+  top: 0px !important;
+  right: 0px !important;
+  bottom: 0px !important;
+  left: 0px !important;
+}
+
+.transform-center {
+  top: 50% !important;
+  left: 50% !important;
+  transform: translate(-50%, -50%) !important;
+}
+
+//
+//  z-index
+//
+
+@for $i from 0 through 10 {
+  .z-#{$i} {
+    z-index: #{$i}px !important;
+  }
+}
+
+//
+//  cursor
+//
+.pointer {
+  cursor: pointer;
+}
+
+//
+//  shadow
+//
+.shadow-xl {
+  box-shadow: 0 20px 25px -5px rgb(0 0 0 / 0.1),
+    0 8px 10px -6px rgb(0 0 0 / 0.1);
+}
+
+.shadow-2xl {
+  box-shadow: 0 25px 50px -12px rgb(0 0 0 / 0.25);
+}
+
+// others
+.overflow-hidden {
+  overflow: hidden;
+}
+
+.overflow-x-hidden {
+  overflow-x: hidden;
+}
+
+.overflow-y-auto {
+  overflow-y: auto;
+}
+
+.single-line {
+  display: -webkit-box;
+  -webkit-line-clamp: 1;
+  -webkit-box-orient: vertical;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+.relative-up {
+  position: relative;
+  z-index: 5;
+}
+
+.inset-1 {
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+}
+.img-cover-center {
+  height: 100%;
+  width: 100%;
+  object-fit: cover;
+  object-position: center;
+}
+.img-cover-right {
+  height: 100%;
+  width: 100%;
+  object-fit: cover;
+  object-position: right;
+}
+
+.black-layer {
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  background-color: rgba(0, 0, 0, 0.1);
+}
+
+.select-none {
+  user-select: none;
+}
